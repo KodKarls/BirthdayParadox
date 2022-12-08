@@ -8,8 +8,8 @@ import constants
 class BirthdayParadoxTestCase(unittest.TestCase):
 
     @patch('builtins.print')
-    def test_greet_prompt(self, mock_print):
-        app_functions.show_prompt(f'''Paradoks dnia urodzin.
+    def test_greet_message(self, mock_print):
+        app_functions.show_message(f'''Paradoks dnia urodzin.
 
 Paradox dnia urodzin pokazuje, że w grupie N osób szanse, że dwie osoby mają urodziny w tym samym dniu, jest
 zaskakująco duża. Ten program wykorzystuje metodę Monte Carlo (czyli powtarzalne, losowe symulacje), by ustalić

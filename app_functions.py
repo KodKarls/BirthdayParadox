@@ -1,2 +1,2 @@
-def show_prompt(message: str) -> None:
+def show_message(message: str) -> None:
     print(message)
