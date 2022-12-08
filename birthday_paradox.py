@@ -1,5 +1,9 @@
+import app_functions
+import constants
+
+
 def main() -> None:
-    print('Hello Python :)')
+    app_functions.show_prompt(constants.GREET_MESSAGE)
 
 
 if __name__ == '__main__':
