@@ -5,8 +5,16 @@ zaskakująco duża. Ten program wykorzystuje metodę Monte Carlo (czyli powtarza
 prawdopodobieństwo.'''
 
 MONTHS = ('Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paź', 'Lis', 'Gru')
+SHIFT_MONTHS_INDEX = 1
+ZERO_INDEX = 0
 
 QUESTION_FOR_USER = 'Ile urodzin powinienem wygenerować? (Maks. 100)'
 PROMPT_SIGN = '> '
 USER_RANGE_FROM = 1
 USER_RANGE_TO = 100
+
+START_YEAR = 2001
+START_MONTH = 1
+START_DAY = 1
+START_DAY_RANGE = 0
+LAST_DAY_RANGE = 364
