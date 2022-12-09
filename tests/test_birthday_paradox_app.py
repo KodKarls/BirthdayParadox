@@ -18,8 +18,8 @@ prawdopodobieństwo.''')
 
         mock_print.assert_called_with(constants.GREET_MESSAGE, end='\n')
 
-    @patch('builtins.input', return_value='23')
-    def test_get_amount_of_birthdays(self, mock_input):
+    @patch('builtins.input', lambda _: '23')
+    def test_get_amount_of_birthdays(self):
         result = app_functions.get_amount_of_birthdays()
 
         self.assertEqual(result, 23)
