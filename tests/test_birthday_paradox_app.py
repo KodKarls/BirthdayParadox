@@ -110,6 +110,27 @@ prawdopodobieństwo.''')
 
         self.assertEqual(result, f'W tej sytuacji, nie ma takich samych dni urodzin.')
 
+    def test_get_simulation_match(self):
+        number_of_birthdays = 23
+
+        result = app_functions.get_simulation_match(number_of_birthdays)
+
+        self.assertTrue(49_000 <= result <= 51_000)
+
+    def test_check_currently_simulation_step_round(self):
+        step_number = 10_000
+
+        result = app_functions.check_currently_simulation_step(step_number)
+
+        self.assertEqual(result, True)
+
+    def test_check_currently_simulation_step_not_round(self):
+        step_number = 10_001
+
+        result = app_functions.check_currently_simulation_step(step_number)
+
+        self.assertEqual(result, False)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -77,3 +77,25 @@ def get_match_message(match: None | datetime.date) -> str:
         message += constants.NO_MATCHING_MESSAGE
 
     return message
+
+
+def get_simulation_match(number_of_birthdays: int) -> int:
+    simulation_match = 0
+
+    for i in range(constants.NUMBER_OF_SIMULATION):
+        if check_currently_simulation_step(i):
+            print(f'{i} przeprowadzonych symulacji...')
+        birthdays = get_birthdays(number_of_birthdays)
+        if get_match(birthdays):
+            simulation_match += 1
+
+    show_message(f'{constants.NUMBER_OF_SIMULATION} przeprowadzonych symulacji.')
+
+    return simulation_match
+
+
+def check_currently_simulation_step(step_number: int) -> bool:
+    if step_number % constants.NUMBER_OF_STEP_SIMULATION == constants.NUMBER_ZERO:
+        return True
+
+    return False

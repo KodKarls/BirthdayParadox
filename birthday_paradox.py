@@ -16,6 +16,11 @@ def main() -> None:
     match = app_functions.get_match(birthdays)
     app_functions.show_message(app_functions.get_match_message(match))
 
+    app_functions.show_message(f'Generowanie, {amount_of_birthdays} losowych dni urodzin '
+                               f'{constants.NUMBER_OF_SIMULATION} razy...')
+    input(constants.INPUT_SIMULATION_PROMPT)
+    simulation_match = app_functions.get_simulation_match(amount_of_birthdays)
+
 
 if __name__ == '__main__':
     main()
