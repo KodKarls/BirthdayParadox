@@ -82,6 +82,34 @@ prawdopodobieństwo.''')
 
         self.assertEqual(result, f', {month_name} {birthday.day}')
 
+    def test_get_match_exist(self):
+        birthdays = [datetime.date(2001, 4, 9), datetime.date(2001, 5, 11), datetime.date(2001, 4, 9)]
+
+        result = app_functions.get_match(birthdays)
+
+        self.assertEqual(result, birthdays[constants.ZERO_INDEX])
+
+    def test_get_mach_no_exits(self):
+        birthdays = [datetime.date(2001, 4, 9), datetime.date(2001, 5, 11), datetime.date(2001, 6, 17)]
+
+        result = app_functions.get_match(birthdays)
+
+        self.assertEqual(result, None)
+
+    def test_get_match_message_exits(self):
+        match = datetime.date(2001, 4, 9)
+
+        result = app_functions.get_match_message(match)
+
+        self.assertEqual(result, f'W tej sytuacji, kilka osób ma urodziny: Kwi 9.')
+
+    def test_get_match_message_no_exits(self):
+        match = None
+
+        result = app_functions.get_match_message(match)
+
+        self.assertEqual(result, f'W tej sytuacji, nie ma takich samych dni urodzin.')
+
 
 if __name__ == '__main__':
     unittest.main()

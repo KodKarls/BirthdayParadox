@@ -1,4 +1,5 @@
 import datetime
+import itertools
 import random
 
 import constants
@@ -56,3 +57,23 @@ def get_formatted_birthday_data(index: int, birthday: datetime.date) -> str:
     result += f'{month_name} {birthday.day}'
 
     return result
+
+
+def get_match(birthdays: list[datetime.date]) -> None | datetime.date:
+    for birthday_a, birthday_b in itertools.combinations(birthdays, constants.NUMBER_OF_BIRTHDAY_COMBINATION):
+        if birthday_a == birthday_b:
+            return birthday_b
+
+    return None
+
+
+def get_match_message(match: None | datetime.date) -> str:
+    message = constants.MATCHING_SITUATION_START_MESSAGE
+
+    if match:
+        date_text = get_formatted_birthday_data(constants.ZERO_INDEX, match)
+        message += f'kilka osób ma urodziny: {date_text}.'
+    else:
+        message += constants.NO_MATCHING_MESSAGE
+
+    return message

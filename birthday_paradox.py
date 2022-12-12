@@ -13,6 +13,9 @@ def main() -> None:
     app_functions.show_generate_birthdays(birthdays)
     app_functions.show_message()
 
+    match = app_functions.get_match(birthdays)
+    app_functions.show_message(app_functions.get_match_message(match))
+
 
 if __name__ == '__main__':
     main()
