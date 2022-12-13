@@ -5,6 +5,33 @@ import random
 import constants
 
 
+def run_app() -> None:
+    show_message(constants.GREET_MESSAGE)
+
+    amount_of_birthdays = get_amount_of_birthdays()
+    show_message()
+
+    birthdays = get_birthdays(amount_of_birthdays)
+    show_message(f'Oto {amount_of_birthdays} dni urodzin:')
+    show_generate_birthdays(birthdays)
+    show_message()
+
+    match = get_match(birthdays)
+    show_message(get_match_message(match))
+
+    show_message(f'Generowanie, {amount_of_birthdays} losowych dni urodzin {constants.NUMBER_OF_SIMULATION} razy...')
+    input(constants.INPUT_SIMULATION_PROMPT)
+    simulation_match = get_simulation_match(amount_of_birthdays)
+    show_message()
+
+    probability = count_probability(simulation_match)
+    show_message(f'Ze {constants.NUMBER_OF_SIMULATION} symulacji dla {amount_of_birthdays} osób, ten sam dzień urodzin '
+                 f'wystąpił {simulation_match} razy.')
+    show_message(f'Oznacza to, że dla {amount_of_birthdays} ludzi istnieje {probability}% szans, iż dwie lub więcej '
+                 f'osób będzie miało urodziny w tym samym dniu.')
+    show_message('To prawdopodobnie więcej, niż przypuszczałeś!')
+
+
 def show_message(message: str = '', ending: str = '\n') -> None:
     print(message, end=ending)
 
