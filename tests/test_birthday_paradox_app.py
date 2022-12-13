@@ -131,6 +131,13 @@ prawdopodobieństwo.''')
 
         self.assertEqual(result, False)
 
+    def test_count_probability(self):
+        simulation_match = 51_550
+
+        result = app_functions.count_probability(simulation_match)
+
+        self.assertEqual(result, 51.55)
+
 
 if __name__ == '__main__':
     unittest.main()

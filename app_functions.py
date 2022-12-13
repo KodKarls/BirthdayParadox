@@ -99,3 +99,7 @@ def check_currently_simulation_step(step_number: int) -> bool:
         return True
 
     return False
+
+
+def count_probability(simulation_match: int) -> float:
+    return round(simulation_match / constants.NUMBER_OF_SIMULATION * constants.NUMBER_PERCENT, constants.ROUND_NUMBER)
