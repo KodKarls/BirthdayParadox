@@ -1,6 +1,4 @@
-def main() -> None:
-    print('Hello Python :)')
-
+import app_functions
 
 if __name__ == '__main__':
-    main()
+    app_functions.run_app()
